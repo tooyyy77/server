@@ -10,7 +10,7 @@ const articleController = {
   // 获取文章列表
   async getArticle(req, res) {
     try{
-      const data= await db.Article.find({})
+      const data= await db.Article.find({}).sort({_id: -1})
       return res.json({
         code: '0000',
         data
